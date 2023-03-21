@@ -1,0 +1,164 @@
+<div class="container-fluid register" style="background: url(assets/images/abt-img/5.jpg);">
+    <div class="row">
+        <div class="col-md-2 register-left" >
+            <h3>Welcome</h3>
+            <p>You are 30 seconds away from earning your own money!</p>
+        </div>
+        
+        <div class="col-md-10 register-right">          
+            <div class="tab-content" formControlName="myTabContent">
+                <div class="tab-pane fade show active" formControlName="home" role="tabpanel" aria-labelledby="home-tab">
+                    <h3 class="register-heading">Users Information</h3>                    
+                    <form [formGroup]="addUsersDetails" (ngSubmit)="SaveData()">
+                    <div class="row register-form">
+                        <div *ngIf="msgcheck" class="alert alert-success alert-dismissible fade show" role="alert">
+                            <strong>Data Entered</strong> Saved Successfully
+                            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                          </div>
+                        
+                        <div class="col-md-6">
+                            <div class="form-group mb-2">
+                                <input type="text" class="form-control" formControlName="username" placeholder="Enter UserName *" value="" />
+                                <div *ngIf="f.username.touched && f.username.invalid" class="alert alert-danger">  
+                                    <div *ngIf="f.username.errors.required">Username is required.</div>  
+                                </div> 
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="email" class="form-control"    id='email' formControlName="email" placeholder="Enter Email *" value="" />
+                                <div *ngIf="f.email.touched && f.email.invalid" class="alert alert-danger">  
+                                    <div *ngIf="f.email.errors.required">Email is required.</div>  
+                                    <div *ngIf="f.email.errors.pattern">Please,Enter email in correct format eg:abc@gmail.com</div>  
+                                </div> 
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text" class="form-control" maxlength="14" minlength="14" id="adhaarcard" formControlName="adhaarcard" placeholder="Enter AdhaarCard Number eg:1212 1212 1212 *" value="" />
+                                <div *ngIf="f.adhaarcard.touched && f.adhaarcard.invalid" class="alert alert-danger">  
+                                    <div *ngIf="f.adhaarcard.errors.required">AdhaarCard Number is required.</div>  
+                                    <div *ngIf="f.adhaarcard.errors.pattern">Please, Enter 12 digit Aadharcard Number. eg:1212 1212 1212</div>  
+                                </div> 
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text" class="form-control" formControlName="address" placeholder="Enter Address *" value="" />
+                                <div *ngIf="f.address.touched && f.address.invalid" class="alert alert-danger">  
+                                    <div *ngIf="f.address.errors.required">Address is required.</div>  
+                                  </div> 
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text" class="form-control" formControlName="state" placeholder="Enter State *" value="" />
+                                <div *ngIf="f.state.touched && f.state.invalid" class="alert alert-danger">  
+                                    <div *ngIf="f.state.errors.required">State is required.</div>  
+                                  </div> 
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="number" minlength="6" maxlength="6" name="txtpincode" id="pincode" formControlName="pincode" class="form-control" placeholder="Enter Pincode Number *" value="" />
+                                <div *ngIf="f.pincode.touched && f.pincode.invalid" class="alert alert-danger">  
+                                    <div *ngIf="f.pincode.errors.required">Pincode is required.</div>  
+                                    <div *ngIf="f.pincode.errors.pattern">Please, Enter 6 digit Pincode Number.</div>  
+                                </div>  
+                            </div>
+                           
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" formControlName="terms">
+                                <label class="form-check-label" for="termscheck">All Information you are shared are true,This page takes all your information as you shared , Please select ,If you wish to continue your information to share </label>
+                              </div>
+                           
+                        </div>
+                        <div class="col-md-6">
+                            <div class=" mb-2">
+                                <input type="password" class="form-control" formControlName="password"  placeholder="Enter Password *" value="" />
+                                <div *ngIf="f.password.touched && f.password.invalid" class="alert alert-danger">  
+                                    <div *ngIf="f.password.errors.required">Password is required.</div>  
+                                </div> 
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="number" minlength="10" maxlength="10" id="mobnumber" formControlName="mobnumber" class="form-control" placeholder="Enter Mobile Number *" value="" />
+                                <div *ngIf="f.mobnumber.touched && f.mobnumber.invalid" class="alert alert-danger">  
+                                    <div *ngIf="f.mobnumber.errors.required">Mobile Number is required.</div>  
+                                    <div *ngIf="f.mobnumber.errors.pattern">Please, Enter 10 digit Mobile Number.</div>  
+                                </div>  
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text"   name="txtpancard" minlength="10" maxlength="10" id="pancard" formControlName="pancard" class="form-control" placeholder="Enter Pancard Number *" value="" />
+                                <div *ngIf="f.pancard.touched && f.pancard.invalid" class="alert alert-danger">  
+                                    <div *ngIf="f.pancard.errors.required">Pancard Number is required.</div>  
+                                    <div *ngIf="f.pancard.errors.pattern">Please, Enter 10 digit pancard Number.</div>  
+                                </div>  
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text"  name="txtcity" formControlName="Country" class="form-control" placeholder="Enter Country Name *" value="" />
+                            </div>
+                            <div class="form-group mb-2">
+                                <input type="text"  name="txtcity" formControlName="city" class="form-control" placeholder="Enter City *" value="" />
+                            </div>
+                            
+                            <div class="form-group mb-2">
+                                <div class="maxl">
+                                    <label class="radio inline"> 
+                                        <input type="radio" name="gender" value="male" formControlName="gender">
+                                        <span> Male </span> 
+                                    </label>
+                                    <label class="radio inline ms-2"> 
+                                        <input type="radio" name="gender" value="female" formControlName="gender">
+                                        <span>Female </span> 
+                                    </label>
+                                </div>
+                            </div>
+                            <button class="btnRegister btn btn-primary"  value="Register" type="submit" [disabled]="!addUsersDetails.valid" >Register</button>
+                    <!-- <input type="submit" class="btnRegister btn btn-primary"  value="Register" [disabled]="!addUsersDetails.valid"/> -->
+                   
+                       
+                    </div>
+                    </div>
+                </form>
+                </div>
+                           
+
+
+
+<!-- <div class="card">
+    <div class="card-header">
+      User Registration Form
+    </div>
+    <div class="card-body">
+        <form>
+            <div class="form-group">
+              <label for="lblusername">UserName</label>
+              <input type="text" class="form-control" formControlName="username" aria-describedby="username" placeholder="Enter email">
+            </div>
+            <div class="form-group">
+              <label for="lblpassword">Password</label>
+              <input type="password" class="form-control" formControlName="password" placeholder="Password">
+            </div>
+            <fieldset class="form-group">
+              
+                  <legend class="col-form-label col-sm-2 pt-0">Gender</legend>
+          
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="grformControlNameRadios" formControlName="Male" value="option1">
+                      <label class="form-check-label" for="Male">
+                        Male
+                      </label>
+                    </div>
+                    <div class="form-check">
+                      <input class="form-check-input" type="radio" name="grformControlNameRadios" formControlName="Female" value="option2">
+                      <label class="form-check-label" for="Female">
+                     Female
+                      </label>
+                    </div>
+              </fieldset>
+              <div class="form-group">
+                <label for="lblaadharcard">Aadhaar Card Number</label>
+                <input type="text" class="form-control" formControlName="aadharcard" aria-describedby="aadharcard" placeholder="Enter Aadhar Card Number">
+              </div>
+              <div class="form-group">
+                <label for="lblpancard">Pancard</label>
+                <input type="text" class="form-control" formControlName="pancard" aria-describedby="pancard" placeholder="Enter Pancard Number">
+              </div>
+              <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" formControlName="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Terms and Conditions</label>
+              </div>
+            <button type="submit" class="btn btn-primary">Submit</button>
+          </form>
+    </div>
+  </div> -->
