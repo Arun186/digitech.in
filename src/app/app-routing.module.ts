@@ -7,6 +7,7 @@ import { RegistrationComponent } from './registration/registration.component';
 import { ServicesOfferComponent } from './services-offer/services-offer.component';
 
 const routes: Routes = [
+  { path: '', component: IndexPageComponent },
   { path: 'Index', component: IndexPageComponent },
   { path: 'services', component: ServicesOfferComponent ,
   children: [
