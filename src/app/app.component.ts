@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'CompanyPortal';
+
+  myfunction2(event:any):void {
+    
+  }
 }
+
+
