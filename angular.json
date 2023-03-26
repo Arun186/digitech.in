@@ -13,7 +13,8 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/company-portal",
+            "outputPath": "docs",
+            
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -87,6 +88,7 @@
               "src/assets"
             ],
             "styles": [
+              "../node_modules/font-awesome/css/font-awesome.css",
               "src/styles.css"
             ],
             "scripts": []
